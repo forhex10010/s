@@ -1,0 +1,142 @@
+
+
+local Main = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local hooh = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+
+--Properties:
+
+Main.Name = "Main"
+Main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+Frame.Position = UDim2.new(0.108829573, 0, 0.0975308642, 0)
+Frame.Size = UDim2.new(0, 465, 0, 257)
+Frame.Visible = false
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.283870965, 0, 0.758754849, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.LuckiestGuy
+TextButton.Text = "Save Games"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+hooh.Name = "hooh"
+hooh.Parent = Frame
+hooh.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+hooh.Size = UDim2.new(0, 464, 0, 55)
+
+TextLabel.Parent = hooh
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0.0129310349, 0, 0.236363634, 0)
+TextLabel.Size = UDim2.new(0, 145, 0, 28)
+TextLabel.Font = Enum.Font.LuckiestGuy
+TextLabel.Text = "Save Instance Krnl"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.Position = UDim2.new(0.870689631, 0, 0.0363636352, 0)
+TextButton_2.Size = UDim2.new(0, 60, 0, 50)
+TextButton_2.Font = Enum.Font.LuckiestGuy
+TextButton_2.Text = "x"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 27.000
+TextButton_2.TextWrapped = true
+
+TextButton_3.Parent = Main
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.Position = UDim2.new(0, 0, 0.62716049, 0)
+TextButton_3.Size = UDim2.new(0, 200, 0, 50)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "Open/Close Gui"
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextSize = 14.000
+
+-- Scripts:
+
+local function BMQZMR_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	Parent.Parent.TextButton.MouseButton1Down:Connect(function()_.Parent.Parent.TextButton.Text="Your Downlaod Will Start In: 3" wait(1) _.Parent.Parent.TextButton.Text="Your Downlaod Will Start In: 2" wait(1) _.Parent.Parent.TextButton.Text="Your Downlaod Will Start In: 1" wait(1) _.Parent.Parent.TextButton.Text="Your download is ready! Check in (\krnl\workspace) for it." saveinstance()end)end coroutine.wrap(_)() local function _()
+end
+coroutine.wrap(BMQZMR_fake_script)()
+local function TMVFS_fake_script() -- hooh.DragScript 
+	local script = Instance.new('LocalScript', hooh)
+
+	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	--Put this inside of your Frame and configure the speed if you would like.
+	--Enjoy! Credits go to: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(TMVFS_fake_script)()
+local function EKFFKC_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+	
+	
+	
+end
+coroutine.wrap(EKFFKC_fake_script)()
+local function UEYOCCL_fake_script() -- TextButton_3.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_3)
+
+	local frame = script.Parent.Parent.Frame
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+	
+end
+coroutine.wrap(UEYOCCL_fake_script)()
