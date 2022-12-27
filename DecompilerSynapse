@@ -268,7 +268,7 @@ local UI = Material.Load({
 	Theme = "Dark"
 })
 
-local page = UI.new("zzerexx was here")
+local page = UI.new("dirly was here")
 
 page.Toggle({
 	Text = "Decompile Scripts",
